@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ESPN Top News</string>
+
+    <!--- Temporary -->
+    <string name="title_example">Spieth turns the tables, wins Open in a classic</string>
+    <string name="author_example">Bob Harig ESPN Senior Writer"</string>
+    <string name="description_example">How in the world did Jordan Spieth go from a 1-shot deficit with five holes left to a 3-shot victory and claim the Claret Jug? The 23-year-old produced one of the most memorable finishes The Open has seen in its illustrious history.</string>
+</resources>
