@@ -59,7 +59,7 @@ public class ESPNNewsRecyclerViewAdapter extends RecyclerView.Adapter<ESPNNewsRe
         public CardViewHolder(View itemView) {
             super(itemView);
 
-            articleTitleTextView = (TextView) itemView.findViewById(R.id.articleAuthorTextView);
+            articleTitleTextView = (TextView) itemView.findViewById(R.id.articleTitleTextView);
             articleAuthorTextView = (TextView) itemView.findViewById(R.id.articleAuthorTextView);
             articleDescriptionTextView = (TextView) itemView.findViewById(R.id.articleDescriptionTextView);
             articleImageView = (ImageView) itemView.findViewById(R.id.articleImageView);

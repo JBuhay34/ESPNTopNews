@@ -15,18 +15,23 @@ public class ESPNArticle {
     private String mArticleTitle;
     private String mArticleAuthor;
     private String mArticleDescription;
-    private URL mImageURL;
+    private String mImageURL;
+    private String mTimePublished;
+    private String mURL;
 
-    public ESPNArticle(String articleTitle, String articleAuthor, String articleDescription, URL imageURL){
+    public ESPNArticle(String articleTitle, String articleAuthor, String articleDescription, String imageURL, String timePublished, String url){
 
         mArticleTitle = articleTitle;
         mArticleAuthor = articleAuthor;
         mArticleDescription = articleDescription;
         mImageURL = imageURL;
+        mTimePublished = timePublished;
+        mURL = url;
 
     }
 
-
+    /*
+    // Creates Fake Data
     public static List<ESPNArticle> createArticles(int howMany, Context context){
         ArrayList<ESPNArticle> espnArticles = new ArrayList<ESPNArticle>();
         for(int i = 0; i < howMany; i++) {
@@ -34,6 +39,7 @@ public class ESPNArticle {
         }
         return  espnArticles;
     }
+    */
 
     public String getmArticleTitle() {
         return mArticleTitle;
@@ -47,7 +53,15 @@ public class ESPNArticle {
         return mArticleDescription;
     }
 
-    public URL getmImageURL() {
+    public String getmImageURL() {
         return mImageURL;
+    }
+
+    public String getmTimePublished() {
+        return mTimePublished;
+    }
+
+    public String getmURL() {
+        return mURL;
     }
 }

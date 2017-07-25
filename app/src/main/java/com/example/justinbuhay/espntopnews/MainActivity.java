@@ -17,23 +17,16 @@ public class MainActivity extends AppCompatActivity {
 
 
     private ESPNNewsRecyclerViewAdapter mAdapter;
+    private RecyclerView mRecyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        RecyclerView mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
 
 
-        List<ESPNArticle> espnArticles = ESPNArticle.createArticles(20, this);
-        mAdapter = new ESPNNewsRecyclerViewAdapter(this, espnArticles);
-
-        mRecyclerView.setAdapter(mAdapter);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
-
-
-        // Test Run
         MyAsyncTask myAsyncTask = new MyAsyncTask();
         try {
             myAsyncTask.execute(new URL(NetworkUtils.api_String));
@@ -42,6 +35,29 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
+    }
+
+
+    public class MyAsyncTask extends AsyncTask<URL, Void, List<ESPNArticle>> {
+
+
+        @Override
+        protected List<ESPNArticle> doInBackground(URL... urls) {
+            String json = NetworkUtils.fetchArticleData();
+
+            return ParseJSON.makeESPNArticlesFromJSON(json);
+        }
+
+        @Override
+        protected void onPostExecute(List<ESPNArticle> espnArticles) {
+            super.onPostExecute(espnArticles);
+
+            mAdapter = new ESPNNewsRecyclerViewAdapter(MainActivity.this, espnArticles);
+
+            mRecyclerView.setAdapter(mAdapter);
+            mRecyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this, LinearLayoutManager.HORIZONTAL, false));
+
+        }
     }
 
 }
