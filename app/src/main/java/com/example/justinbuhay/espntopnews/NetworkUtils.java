@@ -17,9 +17,9 @@ public class NetworkUtils {
 
     private static String LOG_TAG = "NetworkUtils";
 
-    public static String api_String = "https://newsapi.org/v1/articles?source=espn&sortBy=top&apiKey=c7fb926751964ccc90f758f027682a2f";
+    //"https://newsapi.org/v1/articles?source=espn&sortBy=top&apiKey=c7fb926751964ccc90f758f027682a2f"
 
-    public static String fetchArticleData(){
+    public static String fetchArticleData(String api_String){
 
         String jsonParsed = "";
 
