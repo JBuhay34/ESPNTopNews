@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         protected List<ESPNArticle> doInBackground(URL... urls) {
             String json = NetworkUtils.fetchArticleData();
 
+
             return ParseJSON.makeESPNArticlesFromJSON(json);
         }
 

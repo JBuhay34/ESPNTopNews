@@ -1,13 +1,19 @@
 package com.example.justinbuhay.espntopnews;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
 import java.util.List;
 
 /**
@@ -42,6 +48,10 @@ public class ESPNNewsRecyclerViewAdapter extends RecyclerView.Adapter<ESPNNewsRe
         holder.articleTitleTextView.setText(currentESPNArticle.getmArticleTitle());
         holder.articleAuthorTextView.setText(currentESPNArticle.getmArticleAuthor());
         holder.articleDescriptionTextView.setText(currentESPNArticle.getmArticleDescription());
+        holder.articleImageView.setImageBitmap(currentESPNArticle.getmImageURL());
+
+
+
     }
 
     @Override
