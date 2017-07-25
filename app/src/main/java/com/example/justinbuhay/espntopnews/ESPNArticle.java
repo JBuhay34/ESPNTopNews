@@ -32,29 +32,17 @@ public class ESPNArticle {
         mArticleDescription = articleDescription;
         mTimePublished = timePublished;
         try{
-            try{
-                mImageURL = BitmapFactory.decodeStream((InputStream)new URL(imageURL).getContent());
-            } catch (IOException e){
-                Log.e("ESPNNewsRecyclerView", "Unable to make bitmap");
-            }
+            mImageURL = BitmapFactory.decodeStream((InputStream)new URL(imageURL).getContent());
             mURL = new URL(url);
 
         } catch (MalformedURLException e){
             Log.e("ESPNArticle", "Unable to make URL from image and the website");
+        }  catch (IOException e){
+            Log.e("ESPNNewsRecyclerView", "Unable to make bitmap");
         }
 
     }
 
-    /*
-    // Creates Fake Data
-    public static List<ESPNArticle> createArticles(int howMany, Context context){
-        ArrayList<ESPNArticle> espnArticles = new ArrayList<ESPNArticle>();
-        for(int i = 0; i < howMany; i++) {
-            espnArticles.add(new ESPNArticle(context.getString(R.string.title_example), context.getString(R.string.author_example), context.getString(R.string.description_example), null));
-        }
-        return  espnArticles;
-    }
-    */
 
     public String getmArticleTitle() {
         return mArticleTitle;

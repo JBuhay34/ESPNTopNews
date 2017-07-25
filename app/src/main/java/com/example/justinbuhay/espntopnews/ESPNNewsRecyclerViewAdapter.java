@@ -1,8 +1,11 @@
 package com.example.justinbuhay.espntopnews;
 
+import android.content.ActivityNotFoundException;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -43,12 +46,22 @@ public class ESPNNewsRecyclerViewAdapter extends RecyclerView.Adapter<ESPNNewsRe
 
     @Override
     public void onBindViewHolder(CardViewHolder holder, int position) {
-        ESPNArticle currentESPNArticle = mArticles.get(position);
+        final ESPNArticle currentESPNArticle = mArticles.get(position);
 
         holder.articleTitleTextView.setText(currentESPNArticle.getmArticleTitle());
         holder.articleAuthorTextView.setText(currentESPNArticle.getmArticleAuthor());
         holder.articleDescriptionTextView.setText(currentESPNArticle.getmArticleDescription());
         holder.articleImageView.setImageBitmap(currentESPNArticle.getmImageURL());
+
+        holder.wholeView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent=new Intent(Intent.ACTION_VIEW, Uri.parse(currentESPNArticle.getmURL().toString()));
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    mContext.startActivity(intent);
+            }
+        });
 
 
 
@@ -65,10 +78,12 @@ public class ESPNNewsRecyclerViewAdapter extends RecyclerView.Adapter<ESPNNewsRe
         public TextView articleAuthorTextView;
         public TextView articleDescriptionTextView;
         public ImageView articleImageView;
+        public View wholeView;
 
         public CardViewHolder(View itemView) {
             super(itemView);
 
+            wholeView = itemView;
             articleTitleTextView = (TextView) itemView.findViewById(R.id.articleTitleTextView);
             articleAuthorTextView = (TextView) itemView.findViewById(R.id.articleAuthorTextView);
             articleDescriptionTextView = (TextView) itemView.findViewById(R.id.articleDescriptionTextView);
