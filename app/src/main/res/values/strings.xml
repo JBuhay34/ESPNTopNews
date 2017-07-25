@@ -5,4 +5,20 @@
     <string name="title_example">Spieth turns the tables, wins Open in a classic</string>
     <string name="author_example">Bob Harig ESPN Senior Writer"</string>
     <string name="description_example">How in the world did Jordan Spieth go from a 1-shot deficit with five holes left to a 3-shot victory and claim the Claret Jug? The 23-year-old produced one of the most memorable finishes The Open has seen in its illustrious history.</string>
+    <string name="title_activity_delete_after">DeleteAfterActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!-- Sources -->
+    <string name="entertainment">Entertainment</string>
+
+    <string name="abc_news">ABC News</string>
+    <string name="bbc_news">BBC News</string>
+    <string name="buzzfeed">BuzzFeed</string>
+    <string name="espn">ESPN</string>
+    <string name="ign">IGN</string>
+    <string name="google_news">Google News</string>
 </resources>
