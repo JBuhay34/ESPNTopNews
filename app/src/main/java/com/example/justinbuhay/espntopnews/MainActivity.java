@@ -92,8 +92,10 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-
+        mRecyclerView.setVisibility(View.INVISIBLE);
+        mProgressBar.setVisibility(View.VISIBLE);
         if (id == R.id.abc_news) {
+
             asyncTaskLoader.setmNews("abc-news-au");
         } else if (id == R.id.bbc_news) {
             asyncTaskLoader.setmNews("bbc-news");
@@ -110,8 +112,10 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
 
         }
 
-        mProgressBar.setVisibility(View.VISIBLE);
         getSupportLoaderManager().initLoader(LOADER_MANAGER_ID, null, this).forceLoad();
+
+        mRecyclerView.setVisibility(View.VISIBLE);
+        mProgressBar.setVisibility(View.GONE);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

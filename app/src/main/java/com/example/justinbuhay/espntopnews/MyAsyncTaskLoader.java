@@ -40,6 +40,7 @@ public class MyAsyncTaskLoader extends android.support.v4.content.AsyncTaskLoade
 
         Log.i("NetworkUtils1", builder.toString());
 
+
         String json = NetworkUtils.fetchArticleData(builder.toString());
 
 

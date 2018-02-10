@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/abc_news"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="@string/abc_news" />
+            android:icon="@mipmap/ic_menu_camera"
+            android:title="@string/abc_news"
+            app:showAsAction="always" />
         <item
             android:id="@+id/bbc_news"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/bbc_news"
             android:title="@string/bbc_news" />
 
         <item
@@ -24,8 +26,10 @@
 
         <item
             android:id="@+id/espn"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="@string/espn" />
+            android:icon="@drawable/espn"
+
+            android:title="@string/espn"
+            app:showAsAction="always" />
 
         <item
             android:id="@+id/ign"

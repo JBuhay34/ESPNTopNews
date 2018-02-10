@@ -6,7 +6,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,7 +27,14 @@ public class ParseJSON {
                 JSONObject theObjects = articlesArray.getJSONObject(i);
 
                 String title = theObjects.getString("title");
-                String author = theObjects.getString("author");
+                String author;
+                String tempAuthor = theObjects.getString("author");
+                if (tempAuthor == null || tempAuthor == "null") {
+                    author = " ";
+                } else {
+                    author = tempAuthor;
+                }
+
                 String description = theObjects.getString("description");
                 String url = theObjects.getString("url");
                 String imageURL = theObjects.getString("urlToImage");
